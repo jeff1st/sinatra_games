@@ -2,12 +2,6 @@
 <p>hello <%= session[:player] %></p>
 
 <table>
-  <tr>
-    <th>choice 1</th>
-    <th>choice 2</th>
-    <th>choice 3</th>
-    <th>choice 4</th>
-  </tr>
   <% results.each do |result| %>
   <tr>
     <td class="<%= result[0] %>"><%= result[0] %></td>
@@ -23,6 +17,9 @@
         <tr>
           <td><%= result[4][2] %></td>
           <td><%= result[4][3] %></td>
+        </tr>
+        <tr>
+          <td><%= " " %></td>
         </tr>
       </table>
     </td>

@@ -3,8 +3,8 @@ body {
 }
 
 table, th, td, table tbody table, table tbody th, table tbody td {
-  border: 1px solid black;
-  border-collapse: collapse;
+  /*border: 1px solid black;*/
+  /*border-collapse: collapse;*/
   text-align: center;
 }
 
@@ -14,24 +14,36 @@ table {
 
 .blue {
   background: blue;
+  color: blue;
+  border-radius: 100%;
 }
 
 .red {
   background: red;
+  color: red;
+  border-radius: 100%;
 }
 
 .green {
   background: green;
+  color: green;
+  border-radius: 100%;
 }
 
 .purple {
   background: purple;
+  color: purple;
+  border-radius: 100%;
 }
 
 .orange {
   background: orange;
+  color: orange;
+  border-radius: 100%;
 }
 
 .yellow {
   background: yellow;
+  color: yellow;
+  border-radius: 100%;
 }
