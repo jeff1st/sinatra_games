@@ -14,19 +14,22 @@ end
 
 class GameIA
 include GameHelpers 
+
+  attr_accessor :secret, :results
+
   def initialize
     @secret_count = Hash.new(0)
     @secret = set_secret
     @attempts = 0
     init_game
     fill_secret_count
-    ingame
+#    ingame
   end
 
   def init_game
     @guess = []
     @guess_count = Hash.new(0)
-    @results = ["", "", "", ""]
+    @results = ["i", "j", "k", "l"]
   end
 
   def ingame

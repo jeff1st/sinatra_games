@@ -1,28 +1,71 @@
 <h1>Welcome to the Game</h1>
-<p>hello <%= session[:player] %></p>
 
-<table>
-  <% results.each do |result| %>
-  <tr>
-    <td class="<%= result[0] %>"><%= result[0] %></td>
-    <td class="<%= result[1] %>"><%= result[1] %></td>
-    <td class="<%= result[2] %>"><%= result[2] %></td>
-    <td class="<%= result[3] %>"><%= result[3] %></td>
-    <td>
-      <table>
-        <tr>
-          <td><%= result[4][0] %></td>
-          <td><%= result[4][1] %></td>
-        </tr>
-        <tr>
-          <td><%= result[4][2] %></td>
-          <td><%= result[4][3] %></td>
-        </tr>
-        <tr>
-          <td><%= " " %></td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-  <% end %>
-</table>
+<div class="inputs">
+  <select name="field1" form="inputs">
+    <option type="text" name="yellow" value="yellow">yellow</option>
+    <option type="text" name="blue" value="blue">blue</option>
+    <option type="text" name="red" value="red">red</option>
+    <option type="text" name="green" value="green">green</option>
+    <option type="text" name="pink" value="pink">pink</option>
+    <option type="text" name="orange" value="orange">orange</option>
+  </select>
+
+  <select name="field2" form="inputs">
+    <option type="text" name="yellow" value="yellow">yellow</option>
+    <option type="text" name="blue" value="blue">blue</option>
+    <option type="text" name="red" value="red">red</option>
+    <option type="text" name="green" value="green">green</option>
+    <option type="text" name="pink" value="pink">pink</option>
+    <option type="text" name="orange" value="orange">orange</option>
+  </select>
+
+  <select name="field3" form="inputs">
+    <option type="text" name="yellow" value="yellow">yellow</option>
+    <option type="text" name="blue" value="blue">blue</option>
+    <option type="text" name="red" value="red">red</option>
+    <option type="text" name="green" value="green">green</option>
+    <option type="text" name="pink" value="pink">pink</option>
+    <option type="text" name="orange" value="orange">orange</option>
+  </select>
+
+  <select name="field4" form="inputs">
+    <option type="text" name="yellow" value="yellow">yellow</option>
+    <option type="text" name="blue" value="blue">blue</option>
+    <option type="text" name="red" value="red">red</option>
+    <option type="text" name="green" value="green">green</option>
+    <option type="text" name="pink" value="pink">pink</option>
+    <option type="text" name="orange" value="orange">orange</option>
+  </select>
+
+  <form action="/game" method="get" id="inputs">
+    <input type="submit">
+  </form>
+
+</div>
+<div class="results">
+  <table>
+    <% results.each do |result| %>
+    <tr>
+      <td id="<%= result[0] %>"><%= result[0] %></td>
+      <td id="<%= result[1] %>"><%= result[1] %></td>
+      <td id="<%= result[2] %>"><%= result[2] %></td>
+      <td id="<%= result[3] %>"><%= result[3] %></td>
+      <td>
+        <table>
+          <tr>
+            <td><%= result[4][0] %></td>
+            <td><%= result[4][1] %></td>
+          </tr>
+          <tr>
+            <td><%= result[4][2] %></td>
+            <td><%= result[4][3] %></td>
+          </tr>
+          <tr>
+            <td><%= " " %></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

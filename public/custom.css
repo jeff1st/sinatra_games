@@ -12,38 +12,68 @@ table {
   margin: auto;
 }
 
-.blue {
+#blue {
   background: blue;
   color: blue;
+  height: 45px;
+  width: 45px;
   border-radius: 100%;
+  line-height: 2px;
 }
 
-.red {
+#red {
   background: red;
   color: red;
+  height: 45px;
+  width: 45px;
   border-radius: 100%;
+  line-height: 2px;
 }
 
-.green {
+#green {
   background: green;
   color: green;
+  height: 45px;
+  width: 45px;
   border-radius: 100%;
+  line-height: 2px;
 }
 
-.purple {
-  background: purple;
-  color: purple;
+#pink {
+  background: pink;
+  color: pink;
+  height: 45px;
+  width: 45px;
   border-radius: 100%;
+  line-height: 2px;
 }
 
-.orange {
+#orange {
   background: orange;
   color: orange;
+  height: 45px;
+  width: 45px;
   border-radius: 100%;
+  line-height: 2px;
 }
 
-.yellow {
+#yellow {
   background: yellow;
   color: yellow;
+  height: 45px;
+  width: 45px;
   border-radius: 100%;
+  line-height: 2px;
+}
+
+.inputs {
+  text-align: left;
+  float: left;
+  width: 30%;
+  padding-left: 10%;
+}
+
+.results {
+  float: right;
+  width: 60%;
 }
