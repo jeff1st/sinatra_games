@@ -1,0 +1,11 @@
+<h1>Welcome to secret cipher</h1>
+
+<form>
+  <input type="text" class="message" name="message" size="40" placeholder="message to encode"><input type="text" class="shift" name="shift" placeholder="shift value" size="6">
+  <input type="submit" value="submit" class="submit">
+</form>
+
+<% if message %>
+  <h2>The encoded message is:</h2>
+  <h3 class="result"><%= message %></h3>
+<% end %>

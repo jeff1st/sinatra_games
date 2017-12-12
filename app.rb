@@ -1,6 +1,12 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require './ai'
+require './cipher'
+
+include Cipher
+
+enable :sessions
+game = GameIA.new
 
 def check_message(remains, result)
   message = ""
@@ -25,11 +31,22 @@ def keep_last_selection(res)
   return transform
 end
 
-enable :sessions
-game = GameIA.new
+def set_message(message, shift = 3)
+  return nil if (message == nil || message == "")
+  return Cipher::cipher(message, shift)
+end
 
-get '/welcome' do
-  erb :mastermind, { :layout => :layout }
+get '/' do
+  direction = params[:name]
+  if !direction.nil?
+    if direction == "cipher"
+      redirect '/cipher'
+    else 
+      redirect '/game'
+    end
+  end
+
+  erb :welcome, { :layout => :layout }
 end
 
 get '/game' do
@@ -66,3 +83,17 @@ get '/reset' do
   game = GameIA.new
   redirect '/game'
 end
+
+get '/cipher' do
+  name = ""
+  shift = params[:shift].to_i
+  message = set_message(params[:message], shift)
+  erb :cipher, { :layout => :layout,
+                 :locals => {
+                     :name => name,
+                     :message => message,
+                     :shift => shift
+                 }
+               }
+end
+
