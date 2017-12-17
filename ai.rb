@@ -35,7 +35,7 @@ include GameHelpers
     init_game
     @guess.each_with_index do |color, index|
       if is_correct?(color, index, @secret)
-        @results[index] << "O"
+        @results[index] = "O"
         @guess_count[color] += 1
       end
     end
@@ -43,7 +43,7 @@ include GameHelpers
     @guess.each_with_index do |color, index|
       if is_misplaced?(color, index, @secret)
         if @guess_count[color] < @secret_count[color]
-          @results[index] << "M"
+          @results[index] = "M"
           @guess_count[color] += 1
         end
       end
@@ -52,6 +52,8 @@ include GameHelpers
     (0..4).each do |i|
       @results[i] = "X" if @results[i] == ""
     end
+
+    @results = sort_results(@results)
   end
 
   private
@@ -59,6 +61,14 @@ include GameHelpers
     def init_game
       @guess_count = Hash.new(0)
       @results = ["", "", "", ""]
+    end
+
+    def sort_results(results)
+      temp = []
+      results.each { |res| temp << res if res == "O" }
+      results.each { |res| temp << res if res == "M" }
+      results.each { |res| temp << res if res == "X" }
+      return temp
     end
 
     def set_secret
